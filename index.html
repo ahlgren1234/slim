@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SCSS Grid System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container-full">
+
+        <section class="navigation">
+            <div class="nav-container">
+                <div class="brand">
+                    <a href="#!">Logo</a>
+                </div> <!-- .brand -->
+                <nav>
+                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+                    <ul class="nav-list">
+                        <li>
+                            <a href="#!">Home</a>
+                        </li>
+                        <li>
+                            <a href="#!">About</a>
+                        </li>
+                        <li>
+                            <a href="#!">Services</a>
+                            <ul class="nav-dropdown">
+                                <li>
+                                    <a href="#!">Web Design</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Web Development</a>
+                                </li>
+                                <li>
+                                    <a href="#!">Graphic Design</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#!">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> <!-- .nav-container -->
+        </section> <!-- .navigation -->
+
+    </div> <!-- .container-full -->
+
+    
+    <div class="container">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa reiciendis exercitationem eius quibusdam amet ad iusto assumenda repellat similique, distinctio ullam? Architecto reprehenderit consequuntur unde laboriosam dolorum maxime eveniet dolor quam obcaecati aliquam praesentium ab, cum rem labore id eius aspernatur voluptatibus. Officiis deleniti ipsum nobis architecto voluptatum quidem illum tempore totam vitae sint velit quod laboriosam accusantium esse repellat autem, quasi doloribus eveniet cupiditate quas. Temporibus quaerat praesentium, asperiores, accusamus ex, incidunt ut aspernatur exercitationem illo quidem recusandae officiis quibusdam dolorem voluptatem. Reiciendis, maxime nobis repellat omnis consectetur eius laborum? Sequi reiciendis provident, dolores nobis ea atque aperiam similique?</p>
+        <small>Small text</small><br />
+        <a href="#">Link text without p.</a>
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="#" class="btn btn-rounded">Go</a>
+            </div>
+
+            <div class="col-xs-12">
+                <a href="#" class="btn btn-rounded btn-primary">Go</a>
+            </div>
+ 
+            <div class="col-xs-12">
+                <button class="btn btn-rounded btn-success">Go</button>
+            </div>
+
+            <div class="col-xs-12">
+                <button class="btn btn-rounded btn-highlight">Go</button>
+            </div>
+
+            <div class="col-xs-12">
+                <button class="btn btn-rounded btn-caution">Go</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button id="modalBtn" class="btn btn-primary btn-rounded">Open Modal</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modalCloseBtn">&times;</span>
+                <h4>Modal Header</h4>
+            </div> <!-- .modal-header -->
+            <div class="modal-body">
+                <p>Hello, World!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla obcaecati ipsa sapiente ducimus sunt vero qui eos dicta, tempore esse.</p>
+            </div> <!-- .modal-body -->
+            <div class="modal-footer">
+                <h5>Modal Footer</h5>
+            </div> <!-- .modal-footer -->
+        </div> <!-- .modal-content -->
+    </div> <!-- #modal .modal -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/main-min.js"></script>
+</body>
+</html>

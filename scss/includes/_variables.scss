@@ -1,0 +1,41 @@
+// Grid stuff
+$grid-width: 1200px;
+$columns: 12;
+
+// Colors
+$primary-color: #3498db;
+$success-color: #27ae60;
+$highlight-color: #e67e22;
+$caution-color: #e74c3c;
+$light-grey: #ecf0f1;
+$middle-grey: #ccc;
+$dark-grey: #333;
+$almost-black: #0a0a0a;
+
+// Fonts
+$default-font-size: 1.6rem;
+
+
+
+// Buttons
+$default-btn-color: $light-grey;
+$default-btn-text-color: $almost-black; 
+$primary-btn-color: $primary-color;
+$primary-btn-text-color: $light-grey;
+$success-btn-color: $success-color;
+$success-btn-text-color: $light-grey;
+$highlight-btn-color: $highlight-color;
+$highlight-btn-text-color: $light-grey;
+$caution-btn-color: $caution-color;
+$caution-btn-text-color: $light-grey;
+
+$button-rounded-corner-radius: 5px;
+
+
+// NavBar
+$content-width: 1000px;
+$breakpoint: 799px;
+$nav-height: 70px;
+$nav-background: #262626;
+$nav-font-color: #ffffff;
+$link-hover-color: #2581DC;
