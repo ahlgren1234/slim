@@ -4,52 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SCSS Grid System</title>
+    <title>Slim Grid System</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <div class="container-full">
+    <div class="container">
 
-        <section class="navigation">
-            <div class="nav-container">
-                <div class="brand">
-                    <a href="#!">Logo</a>
-                </div> 
-                <nav>
-                    <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-                    <ul class="nav-list">
-                        <li>
-                            <a href="#!">Home</a>
-                        </li>
-                        <li>
-                            <a href="#!">About</a>
-                        </li>
-                        <li>
-                            <a href="#!">Services</a>
-                            <ul class="nav-dropdown">
-                                <li>
-                                    <a href="#!">Web Design</a>
-                                </li>
-                                <li>
-                                    <a href="#!">Web Development</a>
-                                </li>
-                                <li>
-                                    <a href="#!">Graphic Design</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#!">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div> 
-        </section> 
+            <nav>
+                    <div id="logo"><span>Logo</span> <label for="drop" class="toggle">Menu</label></div>
+            
+                    <!-- <label for="drop" class="toggle">Menu</label> -->
+                    <input type="checkbox" id="drop" />
+                        <ul class="menu">
+                            <li><a href="#">Home</a></li>
+                            <li>
+                                <!-- First Tier Drop Down -->
+                                <label for="drop-1" class="toggle">About ▾</label>
+                                <a href="#">About</a>
+                                <input type="checkbox" id="drop-1"/>
+                                <ul>
+                                    <li><a href="#">Company</a></li>
+                                </ul> 
+                            </li>
+                            <li>
+                                <!-- First Tier Drop Down -->
+                                <label for="drop-2" class="toggle">Services ▾</label>
+                                <a href="#">Services</a>
+                                <input type="checkbox" id="drop-2"/>
+                                <ul>
+                                    <li><a href="#">Web Design</a></li>
+                                    <li><a href="#">SEO</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                  
 
     </div> 
 
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>testing</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6"><p>test</p></div>
+            <div class="col-md-6">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam earum ullam beatae, blanditiis cum eius quidem alias est possimus voluptas. Dolor aut ad nostrum, dolores similique fugit eius totam rem blanditiis alias ipsam molestiae itaque quis impedit tempore qui laudantium? Praesentium quis nesciunt dolor, ducimus nam sequi tenetur quisquam dolore?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae quaerat deserunt nulla ab aliquam voluptas vel fugit repellendus ratione laboriosam, enim fuga cupiditate corrupti dolorum nesciunt eaque minus similique nihil nostrum iure reiciendis. Hic reprehenderit laborum accusamus facilis, omnis rerum. Architecto illo accusamus doloribus cupiditate repellendus dolore fuga beatae?</p>
+            </div>
+        </div>
+    </div>
 
     
     <div class="container">

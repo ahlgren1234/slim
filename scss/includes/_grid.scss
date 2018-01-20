@@ -7,24 +7,22 @@ body {
 }
 
 .container {
-    // background: #eee;
     width: calc(100% - 10rem);
     max-width: $grid-width;
     margin: 0 auto;
 }
 
 .container-full {
-    // background: #eee;
     width: 100%;
 }
 
 // /* TO BE DELETED */
- div[class^="col-"] {
-    background: pink;
-    border: 1px solid red;
-    text-align: center;
-    padding: 1rem 0;
- }
+//  div[class^="col-"] {
+//     background: pink;
+//     border: 1px solid red;
+//     //text-align: center;
+//     padding: 1rem 0;
+//  }
 
 .row {
     display: flex;

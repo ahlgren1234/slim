@@ -30,8 +30,6 @@ body { margin: 0; padding: 0; }
 
 .container-full { width: 100%; }
 
-div[class^="col-"] { background: pink; border: 1px solid red; text-align: center; padding: 1rem 0; }
-
 .row { display: flex; flex-wrap: wrap; }
 
 .col-xs-offset-0, .col-sm-offset-0, .col-md-offset-0, .col-lg-offset-0, .col-xl-offset-0 { margin-left: 0; }
@@ -646,60 +644,75 @@ div[class^="col-"] { background: pink; border: 1px solid red; text-align: center
   .col-xl-offset-11 { margin-left: 91.6666666667%; }
   .col-xl-offset-12 { margin-left: 100%; } }
 
-.navigation { height: 70px; background: #262626; }
+.toggle, [id^=drop] { display: none; }
 
-.brand { position: absolute; padding-left: 20px; float: left; line-height: 70px; text-transform: uppercase; font-size: 1.4em; }
+/* Giving a background-color to the nav container. */
+nav { margin: 0; padding: 0; background-color: #333; }
 
-.brand a, .brand a:visited { color: #ffffff; text-decoration: none; }
+#logo { display: block; padding: 0 30px; float: left; font-size: 20px; line-height: 60px; color: #ecf0f1; }
 
-.nav-container { max-width: 1000px; margin: 0 auto; }
+/* Since we'll have the "ul li" "float:left" we need to add a clear after the container. */
+nav:after { content: ""; display: table; clear: both; }
 
-nav { float: right; }
+/* Removing padding, margin and "list-style" from the "ul", and adding "position:reltive" */
+nav ul { float: right; padding: 0; margin: 0; list-style: none; position: relative; }
 
-nav ul { list-style: none; margin: 0; padding: 0; }
+/* Positioning the navigation items inline */
+nav ul li { margin: 0px; display: inline-block; float: left; background-color: #333; }
 
-nav ul li { float: left; position: relative; }
+/* Styling the links */
+nav a { display: block; padding: 14px 20px; color: #ecf0f1; font-size: 17px; text-decoration: none; }
 
-nav ul li a, nav ul li a:visited { display: block; padding: 0 20px; line-height: 70px; background: #262626; color: #ffffff; text-decoration: none; }
+nav ul li ul li:hover { background: #0a0a0a; }
 
-nav ul li a:hover, nav ul li a:visited:hover { background: #2581DC; color: #ffffff; }
+/* Background color change on Hover */
+nav a:hover { background-color: #0a0a0a; }
 
-nav ul li a:not(:only-child):after, nav ul li a:visited:not(:only-child):after { padding-left: 4px; content: ' ▾'; }
+/* Hide Dropdowns by Default and giving it a position of absolute */
+nav ul ul { display: none; position: absolute; /* has to be the same number as the "line-height" of "nav a" */ top: 60px; }
 
-nav ul li ul li { min-width: 190px; }
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul { display: inherit; }
 
-nav ul li ul li a { padding: 15px; line-height: 20px; }
+/* Fisrt Tier Dropdown */
+nav ul ul li { width: 170px; float: none; display: list-item; position: relative; }
 
-.nav-dropdown { position: absolute; display: none; z-index: 1; box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); }
+/* Second, Third and more Tiers	 We move the 2nd and 3rd etc tier dropdowns to the left by the amount of the width of the first tier. */
+nav ul ul ul li { position: relative; top: -60px; /* has to be the same number as the "width" of "nav ul ul li" */ left: 170px; }
 
-/* Mobile navigation */
-.nav-mobile { display: none; position: absolute; top: 0; right: 0; background: #262626; height: 70px; width: 70px; }
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content: ' ▾'; }
 
-@media only screen and (max-width: 798px) { .nav-mobile { display: block; }
-  nav { width: 100%; padding: 70px 0 15px; }
-  nav ul { display: none; }
-  nav ul li { float: none; }
-  nav ul li a { padding: 15px; line-height: 20px; }
-  nav ul li ul li a { padding-left: 30px; }
-  .nav-dropdown { position: static; } }
+li > a:only-child:after { content: ''; }
 
-@media screen and (min-width: 799px) { .nav-list { display: block !important; } }
+/* Media Queries
+--------------------------------------------- */
+@media all and (max-width: 768px) { #logo { display: flex; padding: 0; width: 100%; float: none; margin-left: 20px; padding-right: 20px; flex-direction: row; justify-content: space-between; align-items: center; }
+  nav { margin: 0; }
+  /* Hide the navigation menu by default */
+  /* Also hide the  */
+  .toggle + a, .menu { display: none; }
+  /* Stylinf the toggle lable */
+  .toggle { display: inline-block; background-color: #333; padding: 14px 20px; color: #ecf0f1; font-size: 17px; text-decoration: none; border: none; }
+  .toggle:hover { background-color: #0a0a0a; }
+  /* Display Dropdown when clicked on Parent Lable */
+  [id^=drop]:checked + ul { display: block; }
+  /* Change menu item's width to 100% */
+  nav ul li { display: block; width: 100%; }
+  nav ul ul .toggle, nav ul ul a { padding: 0 40px; }
+  nav ul ul ul a { padding: 0 80px; }
+  nav a:hover, nav ul ul ul a { background-color: #0a0a0a; }
+  nav ul li ul li .toggle, nav ul ul a, nav ul ul ul a { padding: 14px 20px; color: #ecf0f1; font-size: 17px; }
+  nav ul li ul li .toggle, nav ul ul a { background-color: #333; }
+  /* Hide Dropdowns by Default */
+  nav ul ul { float: none; position: static; color: red; /* has to be the same number as the "line-height" of "nav a" */ }
+  /* Hide menus on hover */
+  nav ul ul li:hover > ul, nav ul li:hover > ul { display: none; }
+  /* Fisrt Tier Dropdown */
+  nav ul ul li { display: block; width: 100%; }
+  nav ul ul ul li { position: static; /* has to be the same number as the "width" of "nav ul ul li" */ } }
 
-#nav-toggle { position: absolute; left: 18px; top: 22px; cursor: pointer; padding: 10px 35px 16px 0px; }
-
-#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after { cursor: pointer; border-radius: 1px; height: 5px; width: 35px; background: #ffffff; position: absolute; display: block; content: ''; transition: all 300ms ease-in-out; }
-
-#nav-toggle span:before { top: -10px; }
-
-#nav-toggle span:after { bottom: -10px; }
-
-#nav-toggle.active span { background-color: transparent; }
-
-#nav-toggle.active span:before, #nav-toggle.active span:after { top: 0; }
-
-#nav-toggle.active span:before { transform: rotate(45deg); }
-
-#nav-toggle.active span:after { transform: rotate(-45deg); }
+@media all and (max-width: 330px) { nav ul li { display: block; width: 94%; } }
 
 button, .btn, .btn-tiny, .btn-small, .btn-large, .btn-giant, a.btn, a.btn-tiny, a.btn-small, a.btn-large, a.btn-giant { border: 0; border-radius: 0; background-color: #ecf0f1; color: #0a0a0a; cursor: pointer; line-height: 1; font-family: inherit; font-size: 1.6rem; text-decoration: none; display: inline-block; padding: .75em 1.5em; outline: none; margin: 0.1em; }
 
@@ -727,7 +740,7 @@ button.btn-caution, a.btn-caution { background-color: #e74c3c; color: #ecf0f1; }
 
 .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; height: 100%; width: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.3); }
 
-.modal-content { background-color: #f4f4f4; margin: 20% auto; width: 70%; border-radius: 10px; box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17); animation-name: modalopen; animation-duration: 1s; }
+.modal-content { background-color: #f4f4f4; margin: 50vh auto; transform: translateY(-50%); width: 70%; border-radius: 10px; box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17); animation-name: modalopen; animation-duration: 1s; }
 
 .modal-header { background: #ecf0f1; padding: 10px; padding-left: 20px; color: #0a0a0a; border-top-left-radius: 10px; border-top-right-radius: 10px; }
 
