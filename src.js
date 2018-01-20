@@ -27,7 +27,16 @@ function closeModal() {
 ///////// END MODAL
 //
 
+//
+// ALERT BOX
+//
+
+// Hide the alert box when clicked on the close button.
+$('.alert-close').click(function() {
+    $(this).closest('.alert-closable').hide("slow");
+})
+
 
 //
-///////// NAVBAR
+// ALERT BOX END 
 //
